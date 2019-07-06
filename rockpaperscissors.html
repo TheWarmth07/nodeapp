@@ -1,0 +1,86 @@
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="rps.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lobster|Merriweather|Open+Sans|Oswald|Pacifico|Roboto|Srisakdi|ZCOOL+XiaoWei" rel="stylesheet">
+</head>
+
+<body>
+  <h1>ROCK PAPER SCISSORS</h1>
+  
+  <div>
+    <h2>Pick Your Weapon: </h2>
+    <select id="p1" value="Choose">
+      <option>Rock</option>
+      <option>Paper</option>
+      <option>Scissors</option>
+    </select>
+  </div>
+  <div>
+    <h2>Computer choice:</h2><h2 id="result"></h2>
+    <button onclick="calc()">Shoot</button>
+  </div>
+<script>
+  //Compare choices to see who wins or ties and later add points
+  var human = 0;
+  var computer = 0;
+  //Counter for number of games played
+  var counter = 0;
+  
+  function calc(){
+
+  var p1 = document.getElementById("p1").value;
+  //Computer choice calculated at random
+  var p2 = "";
+  var num = Math.random()*3;
+    
+  if(num < 1){
+    p2 = "Rock";
+  }else if(num < 2){
+    p2 = "Paper";
+  }else{
+    p2 = "Scissors";
+  }
+  
+  
+  
+  switch(p1){
+  
+    
+    case "Rock":
+      if(p2 == "Rock"){
+        console.log("Tie")
+      }else if(p2 == "Paper"){
+        computer++;
+      }else{
+        human++;
+      }
+      break;
+    case "Paper":
+      if(p2 == "Paper"){
+        console.log("Tie")
+      }else if(p2 == "Scissors"){
+        computer++;
+      }else{
+        human++
+      }
+      break;
+    case "Scissors":
+      if(p2 == "Scissors"){
+        console.log("Tie")
+      }else if(p2 == "Rock"){
+        computer++;
+      }else{
+        human++
+      }
+      break;
+    }
+    console.log("Human: " + human);
+    console.log("Computer: "+ computer);
+    console.log("Counter: " + counter)
+  }
+  
+</script>
+</body>
+  
+</html>
