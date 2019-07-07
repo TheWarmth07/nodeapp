@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<title>Loan Application</title>
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Barlow+Semi+Condensed|Dancing+Script|Dosis|Indie+Flower|Lobster|Montserrat|Roboto|Spectral+SC|Tangerine" rel="stylesheet">
+<style>
+	html{background-color:#DDDD00;text-align:center;font-family: 'Montserrat', sans-serif;font-size:2em;color:#FFFFFF;}
+	h1{color:#AA0000;}
+	p{color:AA0000;}
+	form{height: 12.5em;width: 30em;margin: 0 0 0 6em;background-color:#AAAA00;border-radius:2em;font-family: 'Spectral SC', serif;}
+	table{font-size:1em;padding: 2em;color:FFFFFF;}
+	button{font-size: 1em;color:AA0000;margin:2em 0 0em 6em;border-radius:0.3em;background-color:#DDDD00;color:#FFFFFF;font-family: 'Spectral SC', serif;}
+	input{font-size:1em;}
+	select{font-size:1em;}	
+</style>
+<script src="main.js"></script>
+</head>
+
+<body>
+	<h1>Apply for a Loan</h1>
+	<p>Choose loan amount and payment period</p>
+	<form name="budget">
+		<table>
+			<tr>
+				<td>Loan :<br> <input type="number" id="income" value="Current monthly income" autofocus required></td>
+			</tr>
+			<tr>
+				<td>Payment Term :<br> 
+					<select form required>
+						<option value="3">3 Months</option>
+						<option value="6">6 Months</option>
+						<option value="12">1 Year</option>
+						<option value="24">2 Year</option>
+						<option value="60">5 Years</option>
+					</select>
+				</td>
+				<td><button onclick="calcLoan()">Submit</button></td>
+			</tr>
+			<tr>
+				<td id="result"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<title>Loan Application</title>
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Barlow+Semi+Condensed|Dancing+Script|Dosis|Indie+Flower|Lobster|Montserrat|Roboto|Spectral+SC|Tangerine" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+</head>
+
+<body>
+	<h1>Apply for a Loan</h1>
+	<p>Choose loan amount and payment period</p>
+	<!--Create loan form-->
+		<table>
+			<tr>
+				<td class="left">
+					Loan:
+				</td>
+				<td class="right">
+					<input name="loan" type="number" class="info" id="income" value="5000" placeholder="$$$" required autofocus>
+				</td>
+			</tr>
+			<tr>
+				<td class="left">
+					Payment Term:
+				</td>
+				<td class="right">
+					<select name="term "class="info" id="term" form required>
+						<option value="3">3 Months</option>
+						<option value="6">6 Months</option>
+						<option value="12" selected>1 Year</option>
+						<option value="24">2 Year</option>
+						<option value="60">5 Years</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="left">Annual Interest Rate:</td>
+				<td class="right"><input name="interest" id="interest" value="6" readonly>%</td>
+			</tr>
+			<tr>
+				<td class="left">Monthly Payment:</td>
+				<td name="result" id="result"></td>				
+				<td class="right">
+					<button onclick="calcLoan()">Calculate</button>
+				</td>
+			</tr>
+		</table>
+		
+		<script src="main.js"></script>
+</body>
+
+</html>

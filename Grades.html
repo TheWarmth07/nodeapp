@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<title>Loan Application</title>
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Barlow+Semi+Condensed|Dancing+Script|Dosis|Indie+Flower|Lobster|Montserrat|Roboto|Spectral+SC|Tangerine" rel="stylesheet">
+<style>
+	body{
+		background-color:#880000;
+		text-align:center;
+		font-family:Montserrat;
+		font-size:1.5em;
+		color:#AAAA00;
+	}
+	.main{
+		width: 12px;
+		height: 12px;
+		margin: 3em 0 0 20em;
+		display: flex;
+	}
+	button{
+		display:block;
+		border:none;
+		background-color:#777700;
+		border-radius: 10px;
+		width:7em;
+		height:3em;
+		margin:3em;
+		color:white;
+		font-size:0.75em;
+	}
+	
+	.results{
+		display:inline-grid;
+		margin-top:15em;
+		background-color:#004400;
+		border-radius:10px;
+		text-align:center;
+		width:7em;
+	}
+	.row{
+		display:inline;
+	}
+	p{
+		display:grid;
+	}
+	input{
+		border-radius:4px;
+		background-color:#AAAA00;
+		margin-bottom:1em;
+		height:2em;
+		width:7em;
+		color:#880000;
+		font-size:0.75em;
+		text-align:center;
+	}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+</script>
+</head>
+
+<body>
+	<h1>Grades</h1>
+	<div class="main">
+		<div class="left">
+			<span>Math:</span><br><br>
+			<span>Science:</span><br><br>
+			<span>English:</span>
+		</div>
+		<div class="right">	
+		
+			<input id="Math">
+			<input id="Science">
+			<input id="English">
+			<button onclick="calc()">Calculate</button>
+			
+		</div>
+	</div>	
+	<div class="results">
+		<div class="row">
+		
+			<span>Math:</span><span id="m"></span>
+		
+		</div>
+		<div class="row">
+		
+			<span>Science:</span><span id="sci"></span>
+		
+		</div>
+		<div class="row">
+		
+			<span>English:</span><span id="eng"></span>
+		
+		</div>
+	</div>		
+<script>
+	
+	function calc(){
+	var math = document.getElementById("Math").value;
+	var science = document.getElementById("Science").value;
+	var english = document.getElementById("English").value;
+	var overall = (math + science + english)/3;
+		//switch statements can't use conditionals
+		if(math >= 90){
+			document.getElementById("m").innerHTML = " A";
+		}else if(math >= 80){
+			document.getElementById("m").innerHTML = " B";
+		}else if(math >= 70){
+			document.getElementById("m").innerHTML = " C";
+		}else if(math >= 60){
+			document.getElementById("m").innerHTML = " D";
+		}else if(math < 60){
+			document.getElementById("m").innerHTML = " F";
+		}else{
+			alert("Error: empty field"); 
+		}
+		
+		if(science >= 90){
+			document.getElementById("sci").innerHTML = " A";
+		}else if(science >= 80){
+			document.getElementById("sci").innerHTML = " B";
+		}else if(science >= 70){
+			document.getElementById("sci").innerHTML = " C";
+		}else if(science >= 60){
+			document.getElementById("sci").innerHTML = " D";
+		}else if(science < 60){
+			document.getElementById("sci").innerHTML = " F";
+		}
+		
+		if(english >= 90){
+			document.getElementById("eng").innerHTML = " A";
+		}else if(english >= 80){
+			document.getElementById("eng").innerHTML = " B";
+		}else if(english >= 70){
+			document.getElementById("eng").innerHTML = " C";
+		}else if(english >= 60){
+			document.getElementById("eng").innerHTML = " D";
+		}else if(english < 60){
+			document.getElementById("eng").innerHTML = " F";
+		}
+	}
+</script>
+</body>
+
+</html>

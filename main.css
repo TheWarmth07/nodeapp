@@ -1,0 +1,46 @@
+body{
+	background-color:#BBBB00;
+	text-align:center;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-size:2em;
+}
+
+h1{color:#888800;}
+
+table{
+	
+	height: 12.5em;
+	width: 30em;
+	margin: 0 0 0 6em;
+	background-color:#888800;
+	border-radius:2em;
+	font-size:1em;
+	padding: 2em;
+}
+
+button{
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-size: 1em;
+	margin:0 0 0 3em;
+	border-radius:0.3em;
+	background-color:#AAAA00;
+}
+
+.info{
+	background-color:#AA2200;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	width:5em;
+	font-size:1em;
+	border:1 px;
+}
+
+.green{
+	background-color:green;
+	color:white;
+}
+#interest{
+	font-size: 1em;
+	background-color:#888800;
+	width:0.75em;
+	border:none;
+}
