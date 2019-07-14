@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Scheduling App</title>
+    <style>
+      body{
+        background-color:#107010;
+        font-family:Arial;
+        font-size:1,5em;
+        text-align:center;
+        color:white;
+      }
+      input{
+        background-color:#111111;
+        color:white;
+      }
+      button{
+        margin-bottom:1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Scheduling App</h1>
+    <input type="number" placeholder="Enter day" id="day">
+    <p>JULY</p><h1 id="date"></h1>
+    <button onclick="date()">CLICK</button><br>
+    
+    <input type="string" placeholder="Enter task" id="task">
+    <ol class="tasks">
+      <li>gchgch</li>
+    </ol>
+    <button onclick="append()">CLICK</button>
+    
+    <div id="div1">
+      <p id="p1">This is a paragraph.</p>
+      <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <script>
+    function append(){
+      var li = document.createElement("li");
+      var text = document.getElementById("task");
+      var list = document.getElementById("tasks");
+      
+      var node1 = document.createTextNode(text);
+      console.log(node1);
+      //para.appendChild(node1);
+      ParentNode.append(node1);
+      var elem = document.getElementById("div1");
+    
+      
+      elem.appendChild(para);
+    }
+    </script>
+    
+    
+    <script>
+    
+      function date(){
+        var day = document.getElementById("day").value;
+        if(day <= 31){
+        document.getElementById("date").innerHTML = day;
+      }else{
+        alert("Not a valid date");
+      }}
+      /*
+      function append(){
+        var task = document.getElementById("task").value;
+        var elmnt = document.createElement("LI");
+        var text = document.createTextNode("water");
+        //var listElement = text + task;
+        elmnt.appendChild(text);
+        document.getElementById("tasks").appendChild(elmnt);
+      }
+      
+      var array = [n];
+      var n;
+      array.push(task);
+      for(i=0;n<5;n++){
+        document.getElement
+      }*/
+      
+    </script>
+  </body>
+</html>
