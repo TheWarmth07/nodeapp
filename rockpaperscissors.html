@@ -18,6 +18,7 @@
   </div>
   <div>
     <h2>Computer choice:</h2><h2 id="result"></h2>
+    <h2 id="display1"></h2>
     <button onclick="calc()">Shoot</button>
   </div>
 <script>
@@ -28,11 +29,13 @@
   var counter = 0;
   
   function calc(){
-
+  counter++;
+  
   var p1 = document.getElementById("p1").value;
   //Computer choice calculated at random
   var p2 = "";
   var num = Math.random()*3;
+  
     
   if(num < 1){
     p2 = "Rock";
@@ -77,7 +80,11 @@
     }
     console.log("Human: " + human);
     console.log("Computer: "+ computer);
-    console.log("Counter: " + counter)
+    console.log("Counter: " + counter);
+    
+    var result = document.getElementById("result");
+    document.getElementById("display1").innerHTML = p2;
+    
   }
   
 </script>
