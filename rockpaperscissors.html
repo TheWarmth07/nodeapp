@@ -21,15 +21,25 @@
     <h2 id="display1"></h2>
     <button onclick="calc()">Shoot</button>
   </div>
+  <div>
+    <h2 id="display2"></h2>
+    <h2 id="display3"></h2>
+  </div>
 <script>
+
+  
   //Compare choices to see who wins or ties and later add points
   var human = 0;
   var computer = 0;
   //Counter for number of games played
   var counter = 0;
   
+  
+  
   function calc(){
   counter++;
+  if(counter <= 9){
+  if(human < 5 && computer < 5){
   
   var p1 = document.getElementById("p1").value;
   //Computer choice calculated at random
@@ -46,7 +56,7 @@
   }
   
   
-  
+  //final result of game determined by switch statement, points added
   switch(p1){
   
     
@@ -84,8 +94,18 @@
     
     var result = document.getElementById("result");
     document.getElementById("display1").innerHTML = p2;
-    
+    document.getElementById("display2").innerHTML = "Your score: " + human;
+    document.getElementById("display3").innerHTML = "Computer's score: " + computer;
+  }else{
+    alert("Game over");
   }
+    
+    
+  }else{
+    alert("Game over");
+  }
+    
+  };
   
 </script>
 </body>
