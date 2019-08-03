@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <title>BUDGET APP</title>
+    <link rel="stylesheet" href="main2.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lobster|Merriweather|Open+Sans|Oswald|Pacifico|Roboto|Srisakdi|ZCOOL+XiaoWei" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    
+    
+    
+  </head>
+  
+  <body ng-init="revenue=50000;rent=835;food=400;phone=80;travel=80;leisure=300">
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <h1>Budget for Web Programmer (Median Salary, Canada <em>PayScale</em>)</h1>
+    <h2>Financial Accounting: Past Month</h2>
+    <a href="budget2.html">Managerial Accounting: Next Month</a>
+    <h3>Revenues</h3>
+    <div class="group">
+      <div class="col1"><p>Monthly income of {{(revenue/12*0.8).toFixed(2)}} after tax: </p></div>
+      <div class="col2"><span>Enter Annual Income</span><br><input ng-model="revenue" type="number" id="rev" placeholder="Enter annual income"/></div>
+    </div>
+    
+    <h3>Expenses</h3>
+    <div class="group">
+      <div class="row">
+        <div class="col1"><p>Rent: {{rent | currency}}</p></div>
+        <div class="col2"><input ng-model="rent" type="number" id="rent" | currency/></div>
+      </div>
+      <div class="row">
+        <div class="col1"><p>Food/Hygiene</p></div>
+        <div class="col2"><input ng-model="food" type="number" id="food" | currency/></div>
+      </div>
+      <div class="row">
+        <div class="col1"><p>Phone Bill</p></div>
+        <div class="col2"><input ng-model="phone" type="number" id="phone"/></div>
+      </div>
+      <div class="row">
+        <div class="col1"><p>Travel(Bus/Train/Car)</p></div>
+        <div class="col2"><input ng-model="travel" type="number" id="travel"/></div>
+      </div>
+      <div class="row">
+        <div class="col1"><p>Leisure</p></div>
+        <div class="col2"><input ng-model="leisure" type="number" id="credit"/></div>
+      </div>
+    </div>
+    <button onclick="calc()">Calculate</button>
+    <h1 id="result"></h1>
+    <script>
+      function calc(){
+        var rev = document.getElementById("rev").value;
+        var rent = document.getElementById("rent").value;
+        var food = document.getElementById("food").value;
+        var phone = document.getElementById("phone").value;
+        var travel = document.getElementById("travel").value;
+        var credit = document.getElementById("credit").value;
+        //something is fucked var expenses = (rent+food+phone+travel+credit);
+        
+        var result = rev/12*0.8 - rent - food - phone - travel - credit;
+        console.log(result);
+        document.getElementById("result").innerHTML = "Disposable income: " + result.toFixed(2);
+      }
+    </script>
+    
+    <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 70, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+    </script>
+  </body>
+</html>
